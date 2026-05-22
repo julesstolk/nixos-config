@@ -1,0 +1,19 @@
+# editor junk
+*~
+*.swp
+*.swo
+*.bak
+
+# temporary files
+result
+result-*
+
+# secrets (only if you actually store them here)
+secrets.nix
+*.age
+*.gpg
+*.key
+*.pem
+
+# private machine-specific overrides (optional pattern)
+local.nix
