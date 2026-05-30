@@ -8,8 +8,7 @@
 
   # hyprland
   programs.hyprland.enable = true;
-  services.xserver.displayManager.gdm.enable = true;
-  services.xserver.displayManager.gdm.wayland = true;
+  services.displayManager.gdm.enable = true;
 
   # configure keymap x11
   services.xserver.xkb.layout = "us";
@@ -18,7 +17,6 @@
   # audio
   services.pipewire = {
     enable = true;
-
     alsa.enable = true;
     alsa.support32Bit = true;
 

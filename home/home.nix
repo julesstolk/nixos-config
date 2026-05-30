@@ -7,7 +7,27 @@ in
   home.username = "point";
   home.homeDirectory = "/home/point";
 
-  home.stateVersion = "25.05";
+  home.stateVersion = "26.05";
+
+  home.pointerCursor = {
+    gtk.enable = true;
+
+    package = pkgs.kdePackages.breeze;
+    name = "breeze_cursors";
+    size = 24;
+  };
+
+  gtk = {
+    enable = true;
+    theme = {
+      name = "Breeze-Dark";
+      package = pkgs.kdePackages.breeze-gtk;
+    };
+    cursorTheme = {
+      name = "breeze_cursors";
+      package = pkgs.kdePackages.breeze;
+    };
+  };
 
   programs.bash = {
     enable = true;
@@ -15,16 +35,24 @@ in
     shellAliases = {
       rebuild = "sudo nixos-rebuild switch -I nixos-config=/home/point/nixos/configuration.nix";
       rb = "sudo nixos-rebuild switch -I nixos-config=/home/point/nixos/configuration.nix";
+      home = "nano /home/point/nixos/home/home.nix";
+      pack = "nano /home/point/nixos/modules/packages.nix";
+      conf = "nano /home/point/nixos/hosts/pc/configuration.nix";
+      desk = "nano /home/point/nixos/modules/desktop.nix";
+      hard = "nano /home/point/nixos/hosts/pc/hardware.nix";
+      rebuildboot = "sudo nixos-rebuild boot -I nixos-config=/home/point/nixos/configuration.nix";
     };
   };
 
 
   programs.git = {
     enable = true;
-    userName = secrets.gitUser;
-    userEmail = secrets.gitEmail;
     
-    extraConfig = {
+    settings.user = {
+      user = {
+        name = secrets.gitUser;
+        email = secrets.gitEmail;
+      };
       init.defaultBranch = "main";
       safe.directory = "/etc/nixos";
       core.askPass = "";
@@ -122,9 +150,17 @@ in
     '';
 
     settings = {
-      exec-once = ["${pkgs.swww}/bin/swww-daemon & sleep 0.2 & ${lib.getExe pkgs.swww} img ${./wallpaper.png}"];
+      exec-once = ["${pkgs.awww}/bin/swww-daemon & sleep 0.2 & ${lib.getExe pkgs.awww} img ${./wallpaper.png}"];
 
-      "$mainMod" = "SUPER";    
+      "$mainMod" = "SUPER";
+
+      bindel = [
+        ", XF86AudioRaiseVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+"
+        ", XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
+      ];
+      bindl = [
+        ", XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
+      ];
 
       bind = [
           "$mainMod, 1, workspace, 1"
