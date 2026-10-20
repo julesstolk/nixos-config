@@ -1,0 +1,83 @@
+/* Wofi style matching Kitty Base2Tone Cave Dark - Orange accent */
+window {
+    margin: 0px;
+    border: 2px solid #565254;
+    border-radius: 8px;
+    background-color: #222021;
+    font-family: "Fira Code", monospace;
+    font-size: 14px;
+}
+
+#input {
+    margin: 8px;
+    border: 2px solid #565254;
+    border-radius: 4px;
+    background-color: #2f2d2e;
+    color: #9f999b;
+    font-size: 16px;
+    padding: 8px;
+}
+
+#inner-box {
+    margin: 8px;
+    background-color: #222021;
+}
+
+#outer-box {
+    margin: 8px;
+    background-color: #222021;
+    border-radius: 8px;
+}
+
+#scroll {
+    margin: 0px;
+    background-color: #222021;
+}
+
+#text {
+    margin: 4px;
+    color: #9f999b;
+    padding: 4px;
+}
+
+#entry {
+    margin: 2px;
+    border-radius: 4px;
+    padding: 4px;
+}
+
+/* Selected item - using the prompt orange */
+#entry:selected {
+    background-color: #FFCC4D;  /* Main orange from cursor */
+    border: none;
+}
+
+#text:selected {
+    color: #222021;
+    font-weight: bold;
+}
+
+/* Alternative orange options - try these if you want different shades: */
+/*
+#entry:selected {
+    background-color: #cca133;  /* Golden yellow */
+/*
+#entry:selected {
+    background-color: #ddaf3c;  /* Brighter gold */
+/*
+#entry:selected {
+    background-color: #ffcc4d;  /* Bright yellow */
+}
+
+#img {
+    margin: 4px;
+}
+
+#text:selected highlight {
+    color: #222021;
+    background-color: #ffcc4d;
+}
+
+#entry:hover {
+    background-color: #2f2d2e;
+}
