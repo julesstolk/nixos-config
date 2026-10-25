@@ -3,6 +3,7 @@
 {
   environment.systemPackages = with pkgs; [
     vim
+    neovim
     wget
     git 
     curl
@@ -43,7 +44,6 @@
     ffmpeg
     gpu-screen-recorder-gtk
     android-studio
-    neovim
     
     bibata-cursors
     kdePackages.breeze
@@ -55,6 +55,7 @@
   programs.seahorse.enable = true;
   programs.firefox.enable = true;
   programs.gpu-screen-recorder.enable = true;
+  programs.direnv.enable = true;
 }
 
 
