@@ -19,6 +19,7 @@ in
 
   gtk = {
     enable = true;
+    gtk4.theme = config.gtk.theme;
     theme = {
       name = "Breeze-Dark";
       package = pkgs.kdePackages.breeze-gtk;
