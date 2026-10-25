@@ -157,6 +157,7 @@ in
 
   wayland.windowManager.hyprland = {
     enable = true;
+    configType = "hyprlang";    
 
     extraConfig = ''
       animations {
