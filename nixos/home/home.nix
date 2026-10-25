@@ -37,11 +37,11 @@ in
     in {
       rebuild = "sudo nixos-rebuild switch --flake ${dir}#nixos";
       rb = "sudo nixos-rebuild switch --flake ${dir}#nixos";
-      home = "nano ${dir}/nixos/home/home.nix";
-      pack = "nano ${dir}/nixos/modules/packages.nix";
-      conf = "nano ${dir}/nixos/hosts/pc/configuration.nix";
-      desk = "nano ${dir}/nixos/modules/desktop.nix";
-      hard = "nano ${dir}/nixos/hosts/pc/hardware.nix";
+      home = "nvim ${dir}/nixos/home/home.nix";
+      pack = "nvim ${dir}/nixos/modules/packages.nix";
+      conf = "nvim ${dir}/nixos/hosts/pc/configuration.nix";
+      desk = "nvim ${dir}/nixos/modules/desktop.nix";
+      hard = "nvim ${dir}/nixos/hosts/pc/hardware.nix";
       rebuildboot = "sudo nixos-rebuild boot --flake ${dir}#nixos";
     };
   };
