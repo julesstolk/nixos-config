@@ -2,3 +2,6 @@
 secrets.nix
 
 local.nix
+
+result
+result-*
